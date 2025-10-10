@@ -5,7 +5,7 @@ export default function Accueil() {
   return (
     <section className="max-w-7xl mx-auto px-6 py-12">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-        {/* Left: texte */}
+        {/* position du texte a gauche */}
         <div>
           <h1 className="text-4xl md:text-5xl font-extrabold text-black leading-tight">
             Commandez Vos <br /> Creations en ligne <br /> facilement
@@ -29,7 +29,7 @@ export default function Accueil() {
            
         
         <div className="flex justify-center md:justify-end">
-          <div className="relative w-64 h-80 md:w-80 md:h-80 rounded-full overflow-hidden bg-purple-800 shadow-xl">
+          <div className="relative w-64 h-80 md:w-100 md:h-80 rounded-full overflow-hidden bg-purple-800 shadow-xl">
              <img
             src={masss} />
             <img src={"../assets/masss.jpg"} alt="masss" className="object-cover w-full h-full" />
