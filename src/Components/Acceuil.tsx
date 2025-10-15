@@ -3,7 +3,7 @@ import masss from "../assets/masss.jpg"; // place ton image ici
 
 export default function Accueil() {
   return (
-    <section className="max-w-7xl mx-auto px-6 py-12">
+    <section className="bg-purple-100 max-w-7xl mx-auto px-6 py-12">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         {/* position du texte a gauche */}
         <div>
