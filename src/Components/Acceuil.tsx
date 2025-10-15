@@ -6,10 +6,17 @@ export default function Accueil() {
   const navigate = useNavigate();
 
   return (
+<<<<<<< HEAD
     <section className="max-w-7xl mx-auto px-6 py-12 flex items-center justify-center min-h-screen">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center justify-items-center">
         {/* Texte et boutons */}
         <div className="text-center md:text-left">
+=======
+    <section className="bg-purple-100 max-w-7xl mx-auto px-6 py-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        {/* position du texte a gauche */}
+        <div>
+>>>>>>> digiservice
           <h1 className="text-4xl md:text-5xl font-extrabold text-black leading-tight">
             Commandez Vos <br /> Créations en ligne <br /> facilement
           </h1>
