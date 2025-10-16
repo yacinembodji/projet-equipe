@@ -1,11 +1,7 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 
-type FormulaireProps = {
-  onRetour: () => void;
-};
-
-export default function Formulaire({ onRetour }: FormulaireProps) {
+export default function Formulaire() {
   const [nom, setNom] = useState("");
   const [email, setEmail] = useState("");
   const [typeCreation, setTypeCreation] = useState("Logo");
@@ -38,14 +34,14 @@ export default function Formulaire({ onRetour }: FormulaireProps) {
       setEmail(""); 
       setTypeCreation("Logo"); 
       setDetails("");
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error(err);
 
       // SweetAlert pour erreur
       Swal.fire({
         icon: "error",
         title: "Erreur",
-        text: err.message || "Une erreur est survenue lors de l'envoi.",
+        text: err instanceof Error ? err.message : "Une erreur est survenue lors de l'envoi.",
         confirmButtonColor: "#ef4444", // rouge
       });
     } finally {
@@ -118,14 +114,6 @@ export default function Formulaire({ onRetour }: FormulaireProps) {
             disabled={loading}
           >
             {loading ? "Envoi..." : "Envoyer"}
-          </button>
-
-          <button
-            type="button"
-            onClick={onRetour}
-            className="flex-1 px-6 py-3 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100 transition text-lg"
-          >
-            Retour
           </button>
         </div>
       </form>

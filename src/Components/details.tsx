@@ -35,7 +35,7 @@ export default function Details() {
 
       <button
         onClick={() => window.history.back()}
-        className="mt-10 px-8 py-3 bg-purple-600 text-white rounded-xl font-semibold hover:bg-purple-700 transition"
+        className="mt-10 px-8 py-3 bg-digipurple text-white rounded-xl font-semibold hover:bg-digipurple transition"
       >
         Retour
       </button>

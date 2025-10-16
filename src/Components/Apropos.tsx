@@ -1,6 +1,6 @@
 import React from "react";
 import lass from "../assets/lass.jpg"; // 🔹 importe ton image ici
-//import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom"; // ✅ obligatoire
 
 export default function APropos() {
@@ -20,7 +20,7 @@ export default function APropos() {
           </p>
            <Link
         to="/details"
-        className="mt-4 inline-block bg-purple-500 text-white p-2 rounded hover:bg-purple-600 transition"
+        className="mt-4 inline-block bg-digipurple text-white p-2 rounded hover:bg-digipurple transition"
       >
         En savoir plus
       </Link>

@@ -4,7 +4,7 @@ import image from "../assets/image.jpeg";
 import cv1 from "../assets/cv1.jpeg";
 import affiche from "../assets/affiche.jpeg";
 import logo1 from "../assets/logo1.jpeg";
-import { Link } from "react-router-dom"; // ✅ obligatoire
+import { Link } from "react-router-dom"; 
 
 
 function DigiService() {
@@ -86,12 +86,12 @@ function DigiService() {
 
         {/* Texte descriptif */}
         <div className="text-left text-gray-700 space-y-6 mt-20">
-          <h2 className="text-xl font-bold text-purple-700">
+          <h2 className="text-xl font-bold text-digipurple">
             AVANTAGES DE NOTRE PLATEFORME DIGISERVICE
           </h2>
 
           <div className="flex items-start space-x-3">
-            <FileText className="text-purple-600 w-6 h-6" />
+            <FileText className="text-digipurple w-6 h-6" />
             <p className="text-xl">
               <span className="font-bold text-xl">Documents professionnels :</span>{" "}
               créez et gérez vos fichiers facilement.
@@ -99,7 +99,7 @@ function DigiService() {
           </div>
 
           <div className="flex items-start space-x-3">
-            <PenTool className="text-purple-600 w-6 h-6" />
+            <PenTool className="text-digipurple w-6 h-6" />
             <p className="text-xl">
               <span className="font-bold text-xl">Design sur mesure :</span>{" "}
               personnalisez vos créations selon vos besoins.
@@ -107,7 +107,7 @@ function DigiService() {
           </div>
 
           <div className="flex items-start space-x-3">
-            <User className="text-purple-600 w-6 h-6" />
+            <User className="text-digipurple w-6 h-6" />
             <p className="text-xl">
               <span className="font-bold text-xl">Profil professionnel :</span>{" "}
               valorisez votre image grâce à des supports modernes.
@@ -141,7 +141,7 @@ function DigiService() {
                 />
                 <h3 className="font-bold mb-2">{service.titre}</h3>
                 <p className="text-gray-600 mb-4">{service.description}</p>
-                <button className="bg-purple-700 text-white px-4 py-2 rounded-full mb-2 hover:bg-purple-800">
+                <button className="bg-digipurple text-white px-4 py-2 rounded-full mb-2 hover:bg-purple-800">
                   {service.bouton}
                 </button>
                 <span className="font-bold">{service.prix}</span>
