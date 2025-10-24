@@ -1,5 +1,5 @@
 // src/Components/Navbar.tsx
-import React, { useState } from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../assets/logo.png"; // chemin de ton logo
 
@@ -11,7 +11,7 @@ export default function Navbar() {
 
   return (
     <header className="bg-white shadow-sm">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 py-1 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-4">
           <img src={logo} alt="Logo" className="h-20 w-20 object-cover rounded-full" />
@@ -32,13 +32,17 @@ export default function Navbar() {
           <NavLink to="/contact" className={({ isActive }) => `${linkClass} ${isActive ? activeClass : "text-gray-700"}`}>
             Contact
           </NavLink>
+         
         </nav>
 
         {/* Bouton Se connecter */}
        <div className="hidden md:flex">
-  <button className="px-5 py-2 border border-digipurple text-digipurple rounded-xl hover:bg-digipurple hover:text-white transition">
+        <NavLink to="/login" className="px-5 py-2 border border-digipurple text-digipurple rounded-xl hover:bg-digipurple hover:text-white transition">
+            Se connecter
+          </NavLink>
+  {/* <button className="px-5 py-2 border border-digipurple text-digipurple rounded-xl hover:bg-digipurple hover:text-white transition">
     Se connecter
-  </button>
+  </button> */}
 </div>
 
         {/* Bouton mobile */}
@@ -72,9 +76,9 @@ export default function Navbar() {
           <NavLink to="/contact" onClick={() => setOpen(false)} className={({ isActive }) => `block ${linkClass} ${isActive ? activeClass : "text-gray-700"}`}>
             Contact
           </NavLink>
-          <button className="w-full px-5 py-2 border border-digipurple text-digipurple rounded-md hover:bg-digipurple hover:text-white transition">
+          {/* <NavLink to="/login" onClick={() => setOpen(false)} className="px-4 py-2 rounded-md bg-digipurple text-white font-semibold">
             Se connecter
-          </button>
+          </NavLink> */}
         </nav>
       )}
     </header>

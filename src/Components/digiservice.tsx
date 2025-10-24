@@ -1,4 +1,4 @@
-import React from "react";
+
 import { Search, FileText, PenTool, User } from "lucide-react";
 import image from "../assets/image.jpeg";
 

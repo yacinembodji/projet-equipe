@@ -1,5 +1,14 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
+import { getCurrentClientId } from "../Produits/ClientService";
+import { z } from "zod";
+
+const formSchema = z.object({
+  nom: z.string().min(1, "Le nom est requis"),
+  email: z.string().email("Email invalide"),
+  typeCreation: z.enum(["Logo", "CV", "Affiche", "Autre"]),
+  details: z.string().optional(),
+});
 
 type FormulaireProps = {
   onRetour: () => void;
@@ -14,13 +23,36 @@ export default function Formulaire({ onRetour }: FormulaireProps) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    const formData = { nom, email, typeCreation, details };
+    const validation = formSchema.safeParse(formData);
+
+    if (!validation.success) {
+      Swal.fire({
+        icon: "error",
+        title: "Erreur de validation",
+        text: validation.error.issues.map((err: any) => err.message).join(", "),
+        confirmButtonColor: "#ef4444",
+      });
+      return;
+    }
+
     setLoading(true);
 
     try {
-      const res = await fetch("https://formspree.io/f/xqayynee", {
+      const res = await fetch("https://essayedeployer.onrender.com/commands", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ nom, email, typeCreation, details }),
+        body: JSON.stringify({
+          clientId: getCurrentClientId() || "m1k2Ypu", // Use logged-in clientId or default
+          productName: typeCreation,
+          price: typeCreation === "CV" ? 2000 : typeCreation === "Logo" ? 1500 : 1000, // Example prices
+          date: new Date().toISOString().split('T')[0],
+          status: "en attente",
+          details: details,
+          clientName: nom,
+          clientEmail: email,
+        }),
       });
 
       if (!res.ok) throw new Error("Erreur lors de l'envoi");
@@ -34,9 +66,9 @@ export default function Formulaire({ onRetour }: FormulaireProps) {
       });
 
       // Réinitialiser le formulaire
-      setNom(""); 
-      setEmail(""); 
-      setTypeCreation("Logo"); 
+      setNom("");
+      setEmail("");
+      setTypeCreation("Logo");
       setDetails("");
     } catch (err: any) {
       console.error(err);
@@ -54,8 +86,8 @@ export default function Formulaire({ onRetour }: FormulaireProps) {
   };
 
   return (
-    <div className="max-w-3xl mx-auto py-12 px-6 bg-white shadow-lg rounded-xl">
-      <h1 className="text-4xl font-bold mb-6 text-center text-digipurple">Formulaire de commande</h1>
+    <div className="max-w-xl mx-auto py- 1 px-2 bg-white shadow-lg rounded-xl">
+      <h1 className="text-4xl font-bold mx-6 text-center text-digipurple">Formulaire de commande</h1>
 
       <form onSubmit={handleSubmit} className="space-y-5">
         <div>
