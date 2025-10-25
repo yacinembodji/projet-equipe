@@ -9,6 +9,7 @@ import Details from "./Components/details";
 import Service from "./Components/Service";
 import Contact from "./Components/Contact";
 import Login from "./Components/Login";
+import CreationCompte from "./Components/CreationCompte";
 import AdminDashboard from "./Admin/AdminDashboard";
 import ClientsDashboard from "./Clients/ClientsDashboard";
 
@@ -50,6 +51,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
 
           <Route path="/login" element={<Login />} />
+          <Route path="/creation-compte" element={<CreationCompte />} />
           <Route path="/dashboard-admin" element={<AdminDashboard />} />
           <Route path="/dashboard-client" element={<ClientsDashboard />} />
         </Routes>
