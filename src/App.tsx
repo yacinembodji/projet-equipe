@@ -17,7 +17,7 @@ function AppContent() {
   const location = useLocation();
 
   // Pages où la navbar ne doit pas apparaître
-  const noNavbarRoutes = ["/login", "/creation-compte", "/dashboard-admin", "/dashboard-client"];
+  const noNavbarRoutes = ["/login", "/creation-compte", "/dashboard-admin", "/dashboard-client", "/commander"];
 
   const showNavbar = !noNavbarRoutes.includes(location.pathname);
 
