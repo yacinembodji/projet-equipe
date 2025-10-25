@@ -6,7 +6,7 @@ import Formulaire from "./Components/Formulaire";
 import DigiService from "./Components/digiservice";
 import Apropos from "./Components/Apropos";
 import Details from "./Components/details";
-import Service from "./Components/service";
+import Service from "./Components/Service";
 
 function App() {
   return (

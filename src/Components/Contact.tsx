@@ -1,5 +1,5 @@
 import React from "react";
-import Fonnd from "../assets/fonnd.jpg";
+import Fonnd from "../assets/photo.jpg";
 const Contact = () => {
   return (
     <div className="bg-purple-700 text-white min-h-screen flex flex-col items-center py-12 px-6">
@@ -81,7 +81,7 @@ const Contact = () => {
 
           <textarea
             placeholder="Message"
-            rows="4"
+            rows ="4"
             className="border p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-purple-500"
           ></textarea>
 
