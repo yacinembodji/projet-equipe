@@ -8,6 +8,9 @@ import Apropos from "./Components/Apropos";
 import Details from "./Components/details";
 import Service from "./Components/Service";
 import Contact from "./Components/Contact";
+import Login from "./Components/Login";
+import AdminDashboard from "./Admin/AdminDashboard";
+import ClientsDashboard from "./Clients/ClientsDashboard";
 
 function App() {
   return (
@@ -45,6 +48,10 @@ function App() {
           <Route path="/services" element={<Service />} />
 
           <Route path="/contact" element={<Contact />} />
+
+          <Route path="/login" element={<Login />} />
+          <Route path="/dashboard-admin" element={<AdminDashboard />} />
+          <Route path="/dashboard-client" element={<ClientsDashboard />} />
         </Routes>
       </div>
     </Router>
