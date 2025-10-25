@@ -1,7 +1,7 @@
 import React from "react";
 
 type ServicesProps = {
-  onRetour: () => void;
+  onRetour?: () => void;
 };
 
 export default function Services({ onRetour }: ServicesProps) {
@@ -10,9 +10,11 @@ export default function Services({ onRetour }: ServicesProps) {
       <h1 className="text-3xl font-bold mb-6">Nos services</h1>
       <p>Liste des services...</p>
 
-      <button onClick={onRetour} className="mt-6 text-blue-500 underline">
-        Retour à l'accueil
-      </button>
+      {onRetour && (
+        <button onClick={onRetour} className="mt-6 text-blue-500 underline">
+          Retour à l'accueil
+        </button>
+      )}
     </div>
   );
 }
