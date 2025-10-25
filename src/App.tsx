@@ -7,6 +7,7 @@ import DigiService from "./Components/digiservice";
 import Apropos from "./Components/Apropos";
 import Details from "./Components/details";
 import Service from "./Components/Service";
+import Contact from "./Components/Contact";
 
 function App() {
   return (
@@ -42,6 +43,8 @@ function App() {
           <Route path="/apropos" element={<Apropos />} />
 
           <Route path="/services" element={<Service />} />
+
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </div>
     </Router>
