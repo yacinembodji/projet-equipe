@@ -6,8 +6,8 @@ import { Link } from "react-router-dom"; // ✅ obligatoire
 export default function APropos() {
   return (
     <div className="bg-purple-100 min-h-screen flex items-center justify-center p-8">
-      <div className="flex flex-col md:flex-row items-center justify-between max-w-5xl w-full bg-white rounded-3xl shadow-lg p-10 gap-10">
-        
+      <div className="flex flex-col md:flex-row items-center justify-between max-w-5xl w-full bg-white rounded-3xl shadow-lg p-10 gap-4">
+
         {/* Section gauche - À propos */}
         <div className="flex-1">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">À propos</h2>
@@ -33,7 +33,7 @@ export default function APropos() {
           {/* 🔹 Image à la place du carré mauve */}
           <div className="flex justify-center mb-6  object-cover">
             <img
-              src={lass} 
+              src={lass}
               alt="Nos services"
               className="rounded-2xl w-40 h-28 object-cover shadow-md"
             />
@@ -45,10 +45,9 @@ export default function APropos() {
 
           <p className="text-2xl text-left text-gray-700 space-y-2 mx-auto w-max list-disc list-inside">
             Offrir des solution innovantes <br/>et efficace à nos clients
-           
+
           </p>
-{/* 
-          <button className="mt-8 px-6 py-3 bg-purple-600 text-white rounded-xl font-semibold hover:bg-purple-700 transition">
+          {/* <button className="mt-8 px-6 py-3 bg-purple-600 text-white rounded-xl font-semibold hover:bg-purple-700 transition">
             Contact
           </button> */}
         </div>

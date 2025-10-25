@@ -16,11 +16,11 @@ function Navbar() {
 
   return (
     <header className="bg-white shadow-sm">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-4">
-          <img src={logo} alt="Logo" className="h-20 w-20 object-cover rounded-full" />
-          <span className="text-xl font-bold">Digiservices</span>
+          <img src={logo} alt="Logo" className="h-12 w-12 object-cover rounded-full" />
+          <span className="text-lg font-bold">Digiservices</span>
         </div>
 
         {/* Liens desktop centrés */}

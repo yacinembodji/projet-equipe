@@ -52,7 +52,7 @@ function DigiService() {
         );
 
   return (
-    <div className="bg-purple-100 min-h-screen flex flex-col items-center p-8">
+    <div className="bg-purple-100 min-h-screen flex flex-col items-center p-4">
       {/* Titre principal */}
       <h1 className="text-2xl font-bold text-center text-black mb-2">
         CONNECTEZ-VOUS POUR <br /> TÉLÉCHARGER VOTRE SERVICE

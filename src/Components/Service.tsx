@@ -1,83 +1,61 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-type ServicesProps = {
-  onRetour?: () => void;
-};
+// 🔹 Importer tes images (assure-toi qu'elles sont dans le dossier assets)
+import cv2 from "../assets/cv2.jpg";
+import logo2 from "../assets/logo2.jpg";
+import affiche2 from "../assets/affiche2.jpg";
+import affiche3 from "../assets/affiche3.jpg";
+import logo3 from "../assets/logo3.jpg";
+import cv3 from "../assets/cv3.jpg";
 
-export default function Services({ onRetour }: ServicesProps) {
-  const services = [
-    {
-      title: "Création de Logo",
-      description: "Design professionnel et unique pour votre marque",
-      icon: "🎨",
-      features: ["Design personnalisé", "Formats multiples", "Droits d'auteur"]
-    },
-    {
-      title: "CV Design",
-      description: "CV moderne et professionnel pour booster votre carrière",
-      icon: "📄",
-      features: ["Templates modernes", "Optimisation ATS", "Formats PDF/Word"]
-    },
-    {
-      title: "Affiche Publicitaire",
-      description: "Affiches impactantes pour vos campagnes marketing",
-      icon: "📢",
-      features: ["Design créatif", "Formats standards", "Impression prête"]
-    },
-    {
-      title: "Autre Services",
-      description: "Solutions personnalisées selon vos besoins",
-      icon: "✨",
-      features: ["Consultation gratuite", "Devis sur mesure", "Suivi personnalisé"]
-    }
-  ];
-
+export default function Services() {
   return (
-    <div className="max-w-6xl mx-auto py-12 px-4">
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold mb-4 text-gray-800">Nos Services</h1>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          Découvrez notre gamme complète de services de design graphique professionnels
+    <div className="bg-purple-100 min-h-screen flex items-center justify-center p-8">
+    <div className="max-w-5xl  bg-purple-200 p-6  shadow-md rounded-3xl">
+      {/* Titre */}
+      <div className="text-center mb-10">
+        <h2 className="text-3xl font-bold mb-2">Nos Services</h2>
+        <p className="text-lg">
+          Donner vie à vos idées avec nos services de création professionnelle: 
+          Logo, CV, et Affiches sur mesure
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mb-12">
-        {services.map((service, index) => (
-          <div key={index} className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-            <div className="text-4xl mb-4">{service.icon}</div>
-            <h3 className="text-xl font-semibold mb-3 text-gray-800">{service.title}</h3>
-            <p className="text-gray-600 mb-4">{service.description}</p>
-            <ul className="space-y-2">
-              {service.features.map((feature, idx) => (
-                <li key={idx} className="flex items-center text-sm text-gray-700">
-                  <span className="text-green-500 mr-2">✓</span>
-                  {feature}
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
+      {/* Grille des services */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        {/* Carte 1 */}
+        <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
+          <img src={cv2} alt="CV Design" className="w-full h-64  object-cover"/>
+        </div>
 
-      <div className="text-center">
-        <div className="bg-gradient-to-r from-purple-600 to-purple-800 text-white rounded-xl p-8">
-          <h2 className="text-2xl font-bold mb-4">Prêt à commencer votre projet ?</h2>
-          <p className="text-purple-100 mb-6">
-            Contactez-nous pour discuter de votre projet et obtenir un devis personnalisé
-          </p>
-          <button className="bg-white text-purple-800 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-            Commander maintenant
-          </button>
+        {/* Carte 2 */}
+        <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
+          <img src={logo2} alt="TRKVE Logo" className="w-full h-64 object-cover"/>
+        </div>
+
+        {/* Carte 3 */}
+        <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
+          <img src={affiche2} alt="CREATESCAPE Logo" className="w-full h-64 object-cover"/>
+        </div>
+
+        {/* Carte 4 */}
+        <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
+          <img src={affiche3} alt="Galadjo Design" className="w-full h-64 object-cover"/>
+        </div>
+
+        {/* Carte 5 */}
+        <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
+          <img src={logo3} alt="Royal Bites" className="w-full h-64 object-cover"/>
+        </div>
+
+        {/* Carte 6 */}
+        <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
+          <img src={cv3} alt="Brian Resume" className="w-full h-64 object-cover"/>
         </div>
       </div>
-
-      {onRetour && (
-        <div className="text-center mt-8">
-          <button onClick={onRetour} className="text-purple-600 hover:text-purple-800 font-medium underline">
-            Retour à l'accueil
-          </button>
-        </div>
-      )}
     </div>
+    </div>
+    
   );
 }

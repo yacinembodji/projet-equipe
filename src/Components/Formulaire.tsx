@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
+import CommandService, { type Command } from "../services/CommandService";
 
 export default function Formulaire() {
   const [nom, setNom] = useState("");
@@ -13,6 +14,21 @@ export default function Formulaire() {
     setLoading(true);
 
     try {
+      // Créer la commande dans le backend
+      const newCommand: Command = {
+        clientId: "anonymous", // ou générer un ID unique si nécessaire
+        productName: typeCreation,
+        price: 0, // prix par défaut, peut être modifié plus tard
+        date: new Date().toISOString().split('T')[0],
+        status: "en attente",
+        details: details,
+        clientName: nom,
+        clientEmail: email,
+      };
+
+      await CommandService.create(newCommand);
+
+      // Envoyer aussi à Formspree pour notification email
       const res = await fetch("https://formspree.io/f/xqayynee", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -30,9 +46,9 @@ export default function Formulaire() {
       });
 
       // Réinitialiser le formulaire
-      setNom(""); 
-      setEmail(""); 
-      setTypeCreation("Logo"); 
+      setNom("");
+      setEmail("");
+      setTypeCreation("Logo");
       setDetails("");
     } catch (err: unknown) {
       console.error(err);
@@ -50,43 +66,43 @@ export default function Formulaire() {
   };
 
   return (
-    <div className="max-w-3xl mx-auto py-12 px-6 bg-white shadow-lg rounded-xl">
-      <h1 className="text-4xl font-bold mb-6 text-center text-digipurple">Formulaire de commande</h1>
+    <div className="max-w-lg mx-auto py-4 px-4 bg-white shadow-lg rounded-xl">
+      <h1 className="text-2xl font-bold mb-3 text-center text-digipurple">Formulaire de commande</h1>
 
-      <form onSubmit={handleSubmit} className="space-y-5">
+      <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label htmlFor="nom" className="block font-medium mb-2">Nom</label>
+          <label htmlFor="nom" className="block font-medium mb-1">Nom</label>
           <input
             type="text"
             id="nom"
             value={nom}
             onChange={(e) => setNom(e.target.value)}
-            className="w-full border border-gray-300 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-digipurple focus:border-digipurple transition"
+            className="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-digipurple focus:border-digipurple transition"
             placeholder="Entrez votre nom"
             required
           />
         </div>
 
         <div>
-          <label htmlFor="email" className="block font-medium mb-2">Email</label>
+          <label htmlFor="email" className="block font-medium mb-1">Email</label>
           <input
             type="email"
             id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full border border-gray-300 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-digipurple focus:border-digipurple transition"
+            className="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-digipurple focus:border-digipurple transition"
             placeholder="Entrez votre email"
             required
           />
         </div>
 
         <div>
-          <label htmlFor="typeCreation" className="block font-medium mb-2">Type de création</label>
+          <label htmlFor="typeCreation" className="block font-medium mb-1">Type de création</label>
           <select
             id="typeCreation"
             value={typeCreation}
             onChange={(e) => setTypeCreation(e.target.value)}
-            className="w-full border border-gray-300 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-digipurple focus:border-digipurple transition"
+            className="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-digipurple focus:border-digipurple transition"
           >
             <option>Logo</option>
             <option>CV</option>
@@ -96,21 +112,21 @@ export default function Formulaire() {
         </div>
 
         <div>
-          <label htmlFor="details" className="block font-medium mb-2">Détails de la commande</label>
+          <label htmlFor="details" className="block font-medium mb-1">Détails de la commande</label>
           <textarea
             id="details"
             value={details}
             onChange={(e) => setDetails(e.target.value)}
-            className="w-full border border-gray-300 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-digipurple focus:border-digipurple transition resize-none"
-            rows={5}
+            className="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-digipurple focus:border-digipurple transition resize-none"
+            rows={4}
             placeholder="Décrivez les détails de votre commande"
           />
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-4 mt-6">
+        <div className="flex flex-col sm:flex-row gap-3 mt-4">
           <button
             type="submit"
-            className="flex-1 px-6 py-3 rounded-lg bg-digipurple text-white font-semibold text-lg hover:bg-purple-700 transition disabled:opacity-60"
+            className="flex-1 px-4 py-2 rounded-lg bg-digipurple text-white font-semibold text-base hover:bg-purple-700 transition disabled:opacity-60"
             disabled={loading}
           >
             {loading ? "Envoi..." : "Envoyer"}
