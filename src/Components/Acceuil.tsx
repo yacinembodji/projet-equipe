@@ -1,12 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import photo from "../assets/photo.jpg";
+import masss from "../assets/masss.jpg";
 
 export default function Accueil() {
   const navigate = useNavigate();
 
   return (
-    <section className="bg-purple-100 max-w-7xl mx-auto px-6 py-12 flex items-center justify-center min-h-screen">
+    <section className="bg-purple-100 max-w-7xl mx-auto px-6 py-6 flex items-center justify-center min-h-screen">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center justify-items-center">
         
         {/* Texte et boutons */}
@@ -39,8 +39,8 @@ export default function Accueil() {
 
         {/* Image */}
         <div className="flex justify-center md:justify-center">
-          <div className="relative w-64 h-97 md:w-64 md:h-97 rounded-full overflow-hidden bg-purple-400 shadow-xl">
-            <img src={photo} alt="Création numérique" className="object-cover w-full h-full" />
+          <div className="relative w-80 h-96 md:w-80 md:h-96 rounded-full overflow-hidden bg-purple-400 shadow-xl">
+            <img src={masss} alt="Création numérique" className="object-cover w-full h-full" />
           </div>
         </div>
 

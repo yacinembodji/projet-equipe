@@ -1,8 +1,11 @@
 import React from "react";
-import Fonnd from "../assets/fonnd.jpg";
+import fonnd from "../assets/fonnd.jpg";
+
 const Contact = () => {
+
+
   return (
-    <div className="bg-purple-700 text-white min-h-screen flex flex-col items-center py-12 px-6">
+    <div className="bg-digipurple text-white  flex flex-col items-center py-16 px-6 rounded-2xl">
       {/* Titre principal */}
       <h1 className="text-3xl md:text-4xl font-bold mb-2 italic text-center">
         contactez-nous
@@ -15,7 +18,7 @@ const Contact = () => {
       <p className="text-center max-w-2xl mb-10 leading-relaxed">
         Que ce soit un <strong>Logo</strong>, une <strong>Affiche</strong> ou un
         <strong> CV</strong>, notre équipe met son savoir-faire à votre service
-        pour donner vie à vos idées. Contactez-nous dès aujourd’hui et recevez
+        pour donner vie à vos idées. Contactez-nous dès aujourd'hui et recevez
         une proposition personnalisée adaptée à vos besoins.
       </p>
 
@@ -24,7 +27,7 @@ const Contact = () => {
         <div>
           <div className="text-3xl mb-2">📧</div>
           <h3 className="font-semibold">Email</h3>
-          <p>asow38204@gmail.com</p>
+          <p>digiservice@gmail.com</p>
         </div>
         <div>
           <div className="text-3xl mb-2">📞</div>
@@ -49,7 +52,7 @@ const Contact = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl bg-white text-black rounded-2xl shadow-lg p-8">
         {/* Formulaire */}
         <form className="space-y-4">
-          <h3 className="text-xl font-semibold text-purple-700 mb-4">
+          <h3 className="text-xl font-semibold text-digipurple mb-4">
             contactez-nous
           </h3>
 
@@ -81,13 +84,13 @@ const Contact = () => {
 
           <textarea
             placeholder="Message"
-            rows="4"
+            rows={4}
             className="border p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-purple-500"
           ></textarea>
 
           <button
             type="submit"
-            className="w-full bg-purple-700 text-white py-2 rounded hover:bg-purple-800 transition"
+            className="w-full bg-digipurple text-white py-2 rounded hover:bg-purple-800 transition"
           >
             ENVOYER
           </button>
@@ -96,7 +99,7 @@ const Contact = () => {
         {/* Image */}
         <div className="flex justify-center items-center">
           <img
-            src={Fonnd}
+            src={fonnd}
             alt="Contact équipe"
             className="rounded-2xl w-full h-auto object-cover"
           />
