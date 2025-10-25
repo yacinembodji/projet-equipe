@@ -41,9 +41,9 @@ function Navbar() {
 
         {/* Bouton Se connecter */}
        <div className="hidden md:flex">
-  <button className="px-5 py-2 border border-digipurple text-digipurple rounded-xl hover:bg-digipurple hover:text-white transition">
+  <NavLink to="/login" className="px-5 py-2 border border-digipurple text-digipurple rounded-xl hover:bg-digipurple hover:text-white transition">
     Se connecter
-  </button>
+  </NavLink>
 </div>
 
         {/* Bouton mobile */}
@@ -77,9 +77,9 @@ function Navbar() {
           <NavLink to="/contact" onClick={() => setOpen(false)} className={({ isActive }) => `block ${linkClass} ${isActive ? activeClass : "text-gray-700"}`}>
             Contact
           </NavLink>
-          <button className="w-full px-5 py-2 border border-digipurple text-digipurple rounded-md hover:bg-digipurple hover:text-white transition">
+          <NavLink to="/login" onClick={() => setOpen(false)} className="w-full px-5 py-2 border border-digipurple text-digipurple rounded-md hover:bg-digipurple hover:text-white transition">
             Se connecter
-          </button>
+          </NavLink>
         </nav>
       )}
     </header>
